@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.storage.add.*;
 
 import com.storage.interfaces.Land;
+import com.storage.interfaces.Stadt;
 
 //LandImpl class to create entity with type Land
 public class LandImpl implements Land{
@@ -44,17 +45,18 @@ public class LandImpl implements Land{
 	}
 	
 	//Method  addItem to add newly created instance of Stadt to storage
-	public LinkedHashSet addItem(StadtImpl stadt){
-		return null;
+	public LinkedHashSet addItem(Stadt stadt1){
+		storage.add(stadt1);
+		return storage;
 	}
 	
 	//Method  removeItem to remove instance of Stadt from storage
-	public LinkedHashSet removeItem(StadtImpl stadt){
-		return null;
+	public LinkedHashSet removeItem(Stadt stadt){
+		storage.remove(stadt);
+		return storage;
 	}
 	
-	public LinkedHashSet showCities(StadtImpl stadt){
-		LinkedHashSet<StadtImpl> storage = null;
+	public LinkedHashSet showCities(){
 		return storage;
 	}
 	
