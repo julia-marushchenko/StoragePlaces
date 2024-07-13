@@ -12,11 +12,11 @@ public class Main {
 		
 		// Instance land of object with type Land for saving information about country Germany with
 		//code DE
-		Land land = new LandImpl(Code.DE, "Germany");
+		LandImpl land = new LandImpl(Code.DE, "Germany");
 		// Instance land1 for saving information about country United Kingdon with code UK
-		Land land1 = new LandImpl(Code.UK, "Great Britain");
+		LandImpl land1 = new LandImpl(Code.UK, "Great Britain");
 		// Instance land2 for saving information about country USA with code USA
-		Land land2 = new LandImpl(Code.USA, "United States of America");
+		LandImpl land2 = new LandImpl(Code.USA, "United States of America");
 		
 		// Instance stadt of object with type Stadt for saving information about city Stuttgart
 		Stadt stadt = new StadtImpl(land, "Stuttgart");
@@ -29,12 +29,18 @@ public class Main {
 		// Instance stadt4 of object with type Stadt  for saving information about city Wachington
 		Stadt stadt4 = new StadtImpl(land2, "Wachington");
 		
-		// Readable representation information about stadt Wachington
+		// Readable representation information about city Wachington
 		System.out.println(stadt4); // StadtImpl [land=LandImpl [code=USA, name=United States of America], name=Wachington]
 		// Hashed information about stadt Wachington, how it is stored in programm StoragePlaces
 		
-		System.out.print(stadt4.hashCode()); // Hash code 1252015222 of instance stadt4 with land field United 
+		System.out.println(stadt4.hashCode()); // Hash code 1252015222 of instance stadt4 with land field United 
 		// States of America and name Wachington
+		
+		land1.addItem(stadt1);
+		land1.addItem(stadt);
+		
+		// Printing to console all cities from land DE
+		System.out.println(land.showCities().toString());
 		
 
 	}
